@@ -6,10 +6,6 @@ var elOutput = document.querySelector('.js-output');
 
 var toDoList = [];
 
-
-
-
-
 elForm.addEventListener('submit', function(evt) {
   evt.preventDefault();
   var isChecked = elCheckbox.checked;
@@ -17,7 +13,8 @@ elForm.addEventListener('submit', function(evt) {
   var myFunction = function() {
     if(isChecked) {
       toDoList.unshift(elInput.value);
-      elOutput.innerHTML = `<p> ${toDoList.join('<p></p>')} </p>`;
+      elOutput.innerHTML = `<p> ${toDoList.join('<p class="border-top"></p>')} </p>`;
+      elInput.value = '';
     }
   }
   elCheckbox.addEventListener('change', function(){
@@ -30,8 +27,6 @@ elForm.addEventListener('submit', function(evt) {
     toDoList.push(elInput.value);
     elOutput.classList.add('border-bottom');
     elOutput.innerHTML = `<p class="m-0"> ${toDoList.join('<p class="border-top"></p>')} </p>`;
+    elInput.value = '';
   }
-
-
-
 });
