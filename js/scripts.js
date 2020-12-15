@@ -18,11 +18,12 @@ elForm.addEventListener('submit', function(evt) {
   }else{
     elIsInclude.textContent = "";
     var myFunction = function() {
-      if(isChecked) {
-        toDoList.unshift(elInput.value);
-        elOutput.innerHTML = `<p> ${toDoList.join('<p class="border-top"></p>')} </p>`;
-        elInput.value = '';
-      }
+    }
+
+    if(isChecked) {
+      toDoList.unshift(elInput.value);
+      elOutput.innerHTML = `<p> ${toDoList.join('<p class="border-top"></p>')} </p>`;
+      elInput.value = '';
     }
     elCheckbox.addEventListener('change', function(){
       myFunction();
