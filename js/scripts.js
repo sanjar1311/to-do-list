@@ -17,20 +17,11 @@ elForm.addEventListener('submit', function(evt) {
     return
   }else{
     elIsInclude.textContent = "";
-    var myFunction = function() {
-    }
 
     if(isChecked) {
       toDoList.unshift(elInput.value);
       elOutput.innerHTML = `<p> ${toDoList.join('<p class="border-top"></p>')} </p>`;
       elInput.value = '';
-    }
-    elCheckbox.addEventListener('change', function(){
-      myFunction();
-    });
-
-    if(isChecked) {
-      myFunction();
     }else{
       toDoList.push(elInput.value);
       elOutput.classList.add('border-bottom');
