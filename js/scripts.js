@@ -14,8 +14,9 @@ elForm.addEventListener('submit', function(evt) {
   if(toDoList.includes(elInput.value)) {
     elIsInclude.classList.add('text-center','h4','text-danger');
     elIsInclude.textContent = 'Error';
+    elInput.value = '';
     return
-  }else{
+  }
     elIsInclude.textContent = "";
 
     if(isChecked) {
@@ -28,5 +29,7 @@ elForm.addEventListener('submit', function(evt) {
       elOutput.innerHTML = `<p class="m-0"> ${toDoList.join('<p class="border-top"></p>')} </p>`;
       elInput.value = '';
     }
-  }
+
+  elCheckbox.checked = false;
+  elInput.focus();
 });
